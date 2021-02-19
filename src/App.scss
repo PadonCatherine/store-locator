@@ -1,0 +1,14 @@
+.app {
+  .group {
+    &-1 {
+      &-item{
+        color:red;
+      }
+    }
+    &-2 {
+      &-item{
+        color:green;
+      }
+    }
+  }
+}
