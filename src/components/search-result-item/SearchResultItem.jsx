@@ -8,12 +8,12 @@ class SearchResultItem extends Component {
         return (
             <div className='search-result-item'>
                 <div className='result-item__name'>
-                    <span>Maison De'Clarke</span>
+                    <span>LBC Express</span>
                     <span className='result-item__distance'>2 km</span>
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
-                    <span>Capt. flordelis, Street, Hilongos, Leyte</span>
+                    <span>Rv Villaflores Corner Rv Fulache Street, Hilongos, Leyte</span>
                 </div>
                 <div>
                     <TagOutlined />
@@ -25,19 +25,19 @@ class SearchResultItem extends Component {
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
-                    <span>Capt. Vilbar, Street, Hilongos, Leyte</span>
+                    <span>Capt. Flordelis, Street, Hilongos, Leyte</span>
                 </div>
                 <div>
                     <TagOutlined />
                     <span className='tags'>Restaurant</span>
                 </div>
                 <div className='result-item__name'>
-                    <span>Rafael's Resort</span>
+                    <span>Go Resort</span>
                     <span className='result-item__distance'>1km</span>
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
-                    <span>Brgy. Atabay Hilongos, Leyte</span>
+                    <span>Brgy. Liberty, Hilongos, Leyte</span>
                 </div>
                 <div>
                     <TagOutlined />
