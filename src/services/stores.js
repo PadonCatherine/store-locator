@@ -1,9 +1,9 @@
-export const getstores = () => {
+export const getStores = () => {
     return Promise.resolve( {
         data: [
         {
             id: 1,
-            name: 'Leopard's Beach Resort and Hotel',
+            name: 'Leopards Beach Resort and Hotel',
             address: 'Pan-Philippine Highway, Atabay, Hilongos, 6524 Leyte',
             Tags: 'Resort ',
             Latitude: 10.4371533,
