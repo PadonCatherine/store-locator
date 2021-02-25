@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
+
 import Brand from '../Features/brand/Brand';
 import Search from '../Features/search/Search';
 import Map from '../Features/map/Map';
@@ -35,17 +36,17 @@ class Main extends Component {
     this.setState({ [statekey]: event.target.value });
   }
 
-  async getStores() {
-    const {data} = await getStores();
+  async getStores() { //kani nga method// mao ni ag nagkuha ug data sa atong services.
+    const { data } = await getStores(); // ang gestores gikan ni sa services.// iya kuhaon ag data//iya ireturn ang promise
     const stores = this.mapStoreDistance( data );
     this.setState({ stores });
   }
 
-  mapStoreDistance( data = []){
-    const stores = data.reduce((mappedstores, store)=> {
-      const {lat, lng } =this.state.currentPosition;
+  mapStoreDistance(data = []) {
+    const stores = data.reduce((mappedStores, store) => {
+      const { lat, lng } = this.state.currentPosition;
       const distance = haversineInKM(lat, lng, store.latitude, store.longitude);
-      return [ ...mappedstores, { ...store, distance}];
+      return [...mappedStores, { ...store, distance }];
     }, []);
     return stores;
   }
@@ -56,13 +57,16 @@ class Main extends Component {
         <Content className='content'>
           <Brand />
 
-          <Search query={this.state.query} 
+          <Search 
+          query={this.state.query} 
           distance={this.state.distance} 
           OnChange={(Event) => this.OnInputChange (Event)} 
           />
 
           <div className='search-content'>
-            <Map currentPosition={this.state.currentPosition} />
+            <Map 
+              currentPosition={this.state.currentPosition} 
+              distance={this.state.distance} />
             <SearchResult />
           </div>
         </Content>
