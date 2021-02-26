@@ -60,9 +60,7 @@ class Main extends Component {
   onSearch() { //filter store
     const { distance, query, stores } = this.state;
     const filteredStores = this.filterStores({ distance, query, stores });
-
     const searchQuery = { distance, query, stores: filteredStores };
-    debugger;
     this.setState({ searchQuery });
   }
 
