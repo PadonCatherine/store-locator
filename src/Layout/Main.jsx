@@ -13,12 +13,19 @@ import './main.scss';
 const { Content } = Layout;
 
 class Main extends Component {
-  state = {
+  state = { // purpose is to separate unsay query ug ag current or default
     stores: [],
     currentPosition: null,
     query: '',
     distance: '1',
-  }
+    searchQuery: {
+      distance: 1,
+      query:'',
+      stores: [],
+
+    },
+
+  };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(({ coords }) => {
@@ -36,8 +43,8 @@ class Main extends Component {
     this.setState({ [statekey]: event.target.value });
   }
 
-  async getStores() { //kani nga method// mao ni ag nagkuha ug data sa atong services.
-    const { data } = await getStores(); // ang gestores gikan ni sa services.// iya kuhaon ag data//iya ireturn ang promise
+  async getStores() { 
+    const { data } = await getStores(); 
     const stores = this.mapStoreDistance( data );
     this.setState({ stores });
   }
@@ -50,6 +57,26 @@ class Main extends Component {
     }, []);
     return stores;
   }
+  onSearch() { //filter store
+    const { distance, query, stores } = this.state;
+    const filteredStores = this.filterStores({ distance, query, stores });
+
+    const searchQuery = { distance, query, stores: filteredStores };
+    debugger;
+    this.setState({ searchQuery });
+  }
+
+  filterStores({ distance, query, stores }) {
+    const filteredStores = stores.filter((store) => {
+      const isStoreInRange = store.distance <= parseInt(distance);
+      if (!query || !isStoreInRange) return isStoreInRange;
+      const isStoreQueried = //ato bang gisearch ang tags/query
+        store.name.toLowerCase().includes(query.toLowerCase()) ||
+        store.tags.toLowerCase().includes(query.toLowerCase()); //sets query to lowercase
+      return isStoreInRange && isStoreQueried; //
+    });
+    return filteredStores;
+  }
 
   render() {
     return (
@@ -61,6 +88,7 @@ class Main extends Component {
           query={this.state.query} 
           distance={this.state.distance} 
           OnChange={(Event) => this.OnInputChange (Event)} 
+          onSubmit={ () => this.onSearch ()}
           />
 
           <div className='search-content'>

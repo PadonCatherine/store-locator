@@ -9,11 +9,11 @@ class SearchResultItem extends Component {
             <div className='search-result-item'>
                 <div className='result-item__name'>
                     <span>LBC Express</span>
-                    <span className='result-item__distance'>2 km</span>
+                    <span className='result-item__distance'>1 km</span>
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
-                    <span>Rv Villaflores Corner Rv Fulache Street, Hilongos, Leyte</span>
+                    <span>Rv Villaflores Corner Rv Fulache Street, Hilongos City, 6524 Leyte</span>
                 </div>
                 <div>
                     <TagOutlined />
@@ -21,7 +21,7 @@ class SearchResultItem extends Component {
                 </div>
                 <div className='result-item__name'>
                     <span>JJ'S Chika-an</span>
-                    <span className='result-item__distance'>3 km</span>
+                    <span className='result-item__distance'>1 km</span>
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
@@ -32,16 +32,16 @@ class SearchResultItem extends Component {
                     <span className='tags'>Restaurant</span>
                 </div>
                 <div className='result-item__name'>
-                    <span>Go Resort</span>
-                    <span className='result-item__distance'>1km</span>
+                    <span>Tambaan Farm Cafe</span>
+                    <span className='result-item__distance'>1 km</span>
                 </div>
                 <div className='result-item__description'>
                     <PushpinOutlined />
-                    <span>Brgy. Liberty, Hilongos, Leyte</span>
+                    <span>Sitio Tambaan, Hilongos, Leyte</span>
                 </div>
                 <div>
                     <TagOutlined />
-                    <span className='tags'>Resort</span>
+                    <span className='tags'>Restaurant</span>
                 </div>
             </div>
         );
