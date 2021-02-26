@@ -5,7 +5,7 @@ export const getStores = () => {
               id: 1,
               name: 'Gaisano Grand Mandaue North',
               address: 'Mandaue City, Cebu',
-              tags: 'Shopping Mall,Hardware,Restaurant,Grocery,Super Market',
+              tags: 'Shopping Mall,Hardware,Restaurant,Grocery,SuperMarket',
               latitude: 10.3567106,
               longitude: 123.9480096,
             },

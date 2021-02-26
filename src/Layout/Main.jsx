@@ -96,7 +96,7 @@ class Main extends Component {
               stores={ this.state.searchQuery.stores}
             />
               
-            <SearchResult />
+            <SearchResult stores={this.state.searchQuery.stores} />
           </div>
         </Content>
       </div>
